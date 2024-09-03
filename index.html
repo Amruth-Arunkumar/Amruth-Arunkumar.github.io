@@ -1,10 +1,24 @@
-<!DOCTYPE html>
-<html>
+<!doctype html>
+<html lang="en">
   <head>
-    <title>Amruth-Arunkumar</title>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <link rel="stylesheet" href="/index.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Amruth Arunkumar</title>
   </head>
   <body>
-    <h1>Hello World</h1>
-    <p>I'm hosted with GitHub Pages.</p>
+    <div id="app">
+      <div inert="true" id="textbox-container" style="display: none">
+        <div id="textbox">
+          <p id="dialogue" class="ui-text"></p>
+          <div class="btn-container">
+            <button id="close" class="ui-close-btn">Close</button>
+          </div>
+        </div>
+      </div>
+      <canvas tabindex="0" id="game"></canvas>
+    </div>
+    <script type="module" src="src/main.js"></script>
   </body>
 </html>
