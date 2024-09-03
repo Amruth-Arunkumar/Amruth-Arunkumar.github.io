@@ -1,4 +1,4 @@
-import kaplay from "kaplay";
+import kaplay from "../lib/kaplay.mjs";
 
 export const k = kaplay({
     global: false,
