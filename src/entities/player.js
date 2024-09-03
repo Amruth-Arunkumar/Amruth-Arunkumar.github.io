@@ -1,4 +1,4 @@
-import { areAnyOfTheseKeysDown, playAnimIfNotPlaying } from "../utils";
+import { areAnyOfTheseKeysDown, playAnimIfNotPlaying } from "../utils.js";
 
 export function generatePlayerComponents(k, pos) {
     return [
