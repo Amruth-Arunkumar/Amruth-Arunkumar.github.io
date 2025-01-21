@@ -1,7 +1,7 @@
-export function showText(k, content, pos, size, r, g, b) {
+export function showText(k, content, pos, size, r, g, b, font="ubuntu") {
     return [
         k.text(content, {
-            font: "ubuntu",
+            font: font,
             width: 700,
             size: size
         }),

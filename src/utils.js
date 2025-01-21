@@ -80,7 +80,7 @@ export async function fetchMapData(mapPath) {
     return await (await fetch(mapPath)).json();
 }
 
-export function drawTiles(k, map, layer, tileheight, tilewidth) {
+export function drawTiles(k, map, layer, tileheight, tilewidth, spritesheet) {
     let drawnTiles = 0;
     const tilePos = k.vec2(0, 0);
     for (const tile of layer.data) {
@@ -95,18 +95,19 @@ export function drawTiles(k, map, layer, tileheight, tilewidth) {
         if (tile === 0) continue;
 
         map.add([
-            k.sprite("assets", {frame: tile-1}),
+            k.sprite(spritesheet, {frame: tile-1}),
             k.pos(tilePos),
             k.offscreen()
         ]);
     }
 }
 
-export function drawImage(k, pos, scale) {
+export function drawImage(k, pos, scale, image="profile", anchor="topleft") {
     return [
-        k.sprite("profile"),
+        k.sprite(image),
         k.pos(pos),
         k.scale(scale),
+        k.anchor(anchor),
         k.offscreen()
     ];
 }
@@ -125,4 +126,13 @@ export function drawBoundaries(k, map, layer) {
     for (const object of layer.objects) {
         map.add(generateColliderBoxComponents(k, object.width, object.height, k.vec2(object.x, object.y + tilesize), object.name));
     }
+}
+
+export function skillLevel(skill) {
+    const gold = ["Python", "SQL", "C++"];
+    const silver = ["C", "JavaScript", "HTML", "Java"]
+    const bronze = ["CSS"]
+    if (gold.includes(skill)) return "gold";
+    else if (silver.includes(skill)) return "silver";
+    else return "bronze";
 }

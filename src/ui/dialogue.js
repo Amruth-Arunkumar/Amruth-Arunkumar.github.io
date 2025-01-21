@@ -10,38 +10,54 @@ async function displayLine(textContainer, line) {
     }
 }
 
-export async function dialogue(k, pos, content) {
-    // gameState.setFreezePlayer(true);
-
-    const dialogueBox = k.add([k.rect(6*(k.width()/8), 1.5*(k.height()/8)), k.pos(pos), k.fixed(), "dialogue"]);
-    const textContainer = dialogueBox.add([
-        k.text("", {
+export async function dialogue(k, map, x, y, pos, content) {
+    map.add([k.rect(x+2, y+2), k.pos(pos), k.anchor("center"), k.color(220, 220, 220), "border"]);
+    const dialogueBox = map.add([k.rect(x, y), k.pos(pos), k.anchor("center"), k.color(27, 29, 52), "tag"]);
+    dialogueBox.add([
+        k.text(content, {
             font: "ubuntu",
-            lineSpacing: 15,
-            size: 16
+            size: 4
         }),
-        k.color(27, 29, 52),
-        k.pos(25, 30),
-        k.fixed()
+        k.color(220, 220, 220),
+        k.anchor("center"),
     ]);
+}
 
-    let index = 0;
+export async function dialogueGold(k, map, x, y, pos, content) {
+    map.add([k.rect(x+2, y+2), k.pos(pos), k.anchor("center"), k.color(201, 176, 55), "border"]);
+    const dialogueBox = map.add([k.rect(x, y), k.pos(pos), k.anchor("center"), k.color(27, 29, 52), "tag"]);
+    dialogueBox.add([
+        k.text(content, {
+            font: "ubuntu",
+            size: 4
+        }),
+        k.color(220, 220, 220),
+        k.anchor("center"),
+    ]);
+}
 
-    await displayLine(textContainer, content[index]);
-    let lineFinishedDisplay = true;
-    const dialogueKey = k.onKeyDown("enter", async () => {
-        if (!lineFinishedDisplay) return;
-        index++;
-        if (!content[index]) {
-            k.destroy(dialogueBox);
-            dialogueKey.cancel();
-            // gameState.setFreezePlayer(false);
-            return;
-        }
+export async function dialogueSilver(k, map, x, y, pos, content) {
+    map.add([k.rect(x+2, y+2), k.pos(pos), k.anchor("center"), k.color(180, 180, 180), "border"]);
+    const dialogueBox = map.add([k.rect(x, y), k.pos(pos), k.anchor("center"), k.color(27, 29, 52), "tag"]);
+    dialogueBox.add([
+        k.text(content, {
+            font: "ubuntu",
+            size: 4
+        }),
+        k.color(220, 220, 220),
+        k.anchor("center"),
+    ]);
+}
 
-        textContainer.text = "";
-        lineFinishedDisplay = false;
-        await displayLine(textContainer, content[index]);
-        lineFinishedDisplay = true;
-    })
+export async function dialogueBronze(k, map, x, y, pos, content) {
+    map.add([k.rect(x+2, y+2), k.pos(pos), k.anchor("center"), k.color(173, 138, 86), "border"]);
+    const dialogueBox = map.add([k.rect(x, y), k.pos(pos), k.anchor("center"), k.color(27, 29, 52), "tag"]);
+    dialogueBox.add([
+        k.text(content, {
+            font: "ubuntu",
+            size: 4
+        }),
+        k.color(220, 220, 220),
+        k.anchor("center"),
+    ]);
 }
