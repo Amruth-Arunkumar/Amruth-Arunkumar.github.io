@@ -6,6 +6,6 @@ export function showText(k, content, pos, size, r, g, b, font="ubuntu") {
             size: size
         }),
         k.color(r, g, b),
-        k.pos(pos)
+        k.pos(pos),
     ];
 }

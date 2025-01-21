@@ -6,14 +6,14 @@ k.loadFont("ubuntu", "../assets/Ubuntu.ttf");
 k.loadFont("silkscreen", "../assets/slkscr.ttf");
 k.loadSprite("profile", "../assets/me.png");
 
-k.loadSprite("python", "../assets/Logos/python.png");
-k.loadSprite("java", "../assets/Logos/java.png");
-k.loadSprite("cpp", "../assets/Logos/cpp.png");
-k.loadSprite("c", "../assets/Logos/c.png");
-k.loadSprite("javascript", "../assets/Logos/javascript.png");
-k.loadSprite("sql", "../assets/Logos/sql.png");
-k.loadSprite("html", "../assets/Logos/html.png");
-k.loadSprite("css", "../assets/Logos/css.png");
+// k.loadSprite("python", "../assets/Logos/python.png");
+// k.loadSprite("java", "../assets/Logos/java.png");
+// k.loadSprite("cpp", "../assets/Logos/cpp.png");
+// k.loadSprite("c", "../assets/Logos/c.png");
+// k.loadSprite("javascript", "../assets/Logos/javascript.png");
+// k.loadSprite("sql", "../assets/Logos/sql.png");
+// k.loadSprite("html", "../assets/Logos/html.png");
+// k.loadSprite("css", "../assets/Logos/css.png");
 
 k.loadSprite("asset_player", "../assets/player.png", {
     sliceX: 4,

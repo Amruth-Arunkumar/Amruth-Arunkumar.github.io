@@ -15,6 +15,14 @@ body {
     position: relative;
 }
 
+a {
+    position:fixed;
+    bottom:10px;
+    right:10px;
+    color: rgb(220, 220, 220);
+    
+}
+
 #textbox {
     position: absolute;
     left: 10%;
