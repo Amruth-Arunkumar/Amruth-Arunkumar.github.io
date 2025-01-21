@@ -4,8 +4,10 @@ import { showText } from "./ui/text.js";
 export function displayDialogue(k, text, onDisplayEnd) {
     const dialogueUI = document.getElementById("textbox-container");
     const dialogue = document.getElementById("dialogue");
+    const link = document.getElementById("link");
 
     dialogueUI.style.display = "block";
+    link.style.display = "none"
 
     let index = 0;
     let currentText = "";
@@ -26,6 +28,7 @@ export function displayDialogue(k, text, onDisplayEnd) {
         dialogueUI.inert = true;
         onDisplayEnd();
         dialogueUI.style.display = "none";
+        link.style.display = "block"
         dialogue.innerHTML = "";
         clearInterval(intervalRef);
         closeBtn.removeEventListener("click", onCloseBtnClick);
